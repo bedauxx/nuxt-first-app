@@ -1,6 +1,6 @@
 # Next first app
 
-https://github.com/bedauxx/nuxt-first-app
+repo https://github.com/bedauxx/nuxt-first-app
 
 
 
