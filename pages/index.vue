@@ -13,39 +13,30 @@
         <logo />
         <vuetify-logo />
       </div>
+
+      <div id="app">
+        <h1 class="title">
+          アプリ名
+        </h1>
+        <input type="text" v-model="newItem">
+        <form v-on:submit.prevent>
+          <button v-on:click="addItem">add</button>
+        </form>
+        <li v-for="todo in todos">
+          {{ todo.item }}
+        </li>
+        <h2 class="subtitle">
+          アプリ名
+        </h2>
+      </div>
+
       <v-card>
         <v-card-title class="headline">
           Welcome to the Vuetify + Nuxt.js template
         </v-card-title>
         <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
+          <p>Vuetify is a progressive Material Design component framework for Vue.js.</p>
+           <p> It was designed to empower developers to create amazing applications.</p>
           <div class="text-xs-right">
             <em><small>&mdash; John Leider</small></em>
           </div>
@@ -87,6 +78,20 @@ export default {
   components: {
     Logo,
     VuetifyLogo
+  },
+  data() {
+    return {
+      newItem: '',
+      todos: []
+    }
+  },
+  methods: {
+    addItem: function(event) {
+      var todo = {
+        item: this.newItem
+      };
+    this.todos.push(todo)
+    }
   }
 }
 </script>
