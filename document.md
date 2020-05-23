@@ -1,4 +1,4 @@
-# Next first app
+# Nuxt first app
 
 repo https://github.com/bedauxx/nuxt-first-app
 
